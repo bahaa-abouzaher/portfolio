@@ -35,7 +35,7 @@ export default function HeroSection() {
               <FaLinkedin />
             </a>
             <a 
-              href="https://github.com/bahaa-abouzahr"
+              href="https://github.com/bahaa-abouzaher"
               target="_blank" rel="noopener noreferrer"
             >
               <FaGithub />

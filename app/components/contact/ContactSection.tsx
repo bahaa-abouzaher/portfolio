@@ -2,24 +2,24 @@
 
 export default function ContactSection() {
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
 
-    const formData = new FormData(e.target);
+  //   const formData = new FormData(e.target);
 
-    await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message")
-      })
-    });
-  }
+  //   await fetch("/api/contact", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       name: formData.get("name"),
+  //       email: formData.get("email"),
+  //       message: formData.get("message")
+  //     })
+  //   });
+  // }
 
   return (
     <section id="contact" className="py-20 text-center">
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+      {/* <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
 
         <input name="name" placeholder="Name" className="w-full p-3 border rounded" />
 
@@ -31,7 +31,7 @@ export default function ContactSection() {
           Send
         </button>
 
-      </form>
+      </form> */}
     </section>
   );
 }
