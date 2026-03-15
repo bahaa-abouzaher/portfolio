@@ -1,26 +1,133 @@
+/* global.css */
 @import "tailwindcss";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--bg-color: #f0f7fb;
+  --second-bg-color: #ffffff;
+  --text-color: #1e293b;
+  --main-color: #00abf0;
+  --main-color-light: #cfeeff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="dark"] {
+  --bg-color: #081b29;
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+  --main-color-light: #85dcff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="light"] {
+  --bg-color: #f0f7fb;
+  --second-bg-color: #ffffff;
+  --text-color: #1e293b;
+  --main-color: #00abf0;
+  --main-color-light: #cfeeff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* generic section layout */
+
+section {
+  padding: 5rem 13%;
+
+}
+
+section:nth-of-type(odd) {
+  background-color: var(--bg-color);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--second-bg-color);
+}
+
+
+/* ============================= */
+/* BREAKPOINTS */
+/* ============================= */
+
+@media (max-width: 1200px) {
+
+  html {
+    font-size: 55%;
+  }
+}
+
+/* tablets */
+@media (max-width: 991px) {
+
+  section {
+    padding: 8rem 6% 4rem;
+  }
+}
+
+/* small tablets */
+
+@media (max-width: 900px) {
+
+  /* experience responsibilities go vertical */
+  .list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+  html {
+    font-size: 52%;
+  }
+
+  section {
+    padding: 3rem 6% 3rem;
+  }
+
+  /* timeline alignment */
+
+  .timelineItem {
+    gap: 1rem;
+  }
+
+  /* experience card spacing */
+
+  .card {
+    padding: 1.4rem;
+  }
+}
+
+
+/* small mobile */
+@media (max-width: 565px) {
+
+  html {
+    font-size: 50%;
+  }
+}
+
+
+/* very small devices */
+@media (max-width: 400px) {
+
+  html {
+    font-size: 48%;
+  }
 }
