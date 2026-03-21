@@ -1,0 +1,306 @@
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* CARD */
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  border: 1px solid var(--main-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--second-bg-color);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  border-bottom: 1px solid var(--main-color);
+}
+
+.cardStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.statusDot {
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+.cardDots {
+  color: var(--main-color);
+  font-size: 1.4rem;
+}
+.cardDots:hover {
+  cursor: pointer;
+}
+
+
+.cardBody {
+  padding: 1.3rem;
+}
+
+.cardHeader {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.cardIconBox {
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid var(--main-color);
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--main-color)
+}
+
+.cardSubtitle {
+  font-size: 0.85rem;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0.8rem 0;
+}
+
+.cardMeta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 3px 0;
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.techBadge,
+.techMore {
+  border: 1px solid var(--main-color);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+.techBadge:hover, .techMore:hover {
+  background: var(--main-color);
+  cursor: default;
+}
+
+.techMore:hover {
+  cursor: pointer;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.detailsButton {
+  background: none;
+  color: var(--main-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 9999;
+}
+
+/* dim background ONLY */
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  opacity: 0.85;
+}
+
+/* MODAL */
+
+.modal {
+  position: relative; /* 🔥 fixes X button */
+  width: 750px;
+  max-width: 90%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* HEADER */
+
+.modalHeader {
+  background: var(--second-bg-color);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--main-color);
+  flex-shrink: 0;
+}
+
+.modalTitle {
+  font-size: 1.55rem;
+  color: var(--main-color);
+  margin-bottom: 0.35rem;
+}
+
+.modalIntro {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* BODY */
+
+.modalBody {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+/* META */
+
+.modalMeta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.metaIcon {
+  color: var(--main-color);
+  font-size: 1.2rem;
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+}
+
+.metaValue {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* BLOCKS */
+
+.modalBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.blockHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blockBar {
+  width: 0.2rem;
+  height: 1.1rem;
+  background: var(--main-color);
+}
+
+.blockText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* FEATURES */
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+}
+
+.featuresList li {
+  position: relative;
+  padding-left: 0.8rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.featuresList li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: var(--main-color);
+}
+
+/* TECH */
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* BUTTON */
+
+.repoButton {
+  margin: 0.8rem auto 0;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  background: var(--main-color);
+  color: var(--bg-color);
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.repoButton:hover {
+  background-color: var(--main-color-light);
+}
+
+/* CLOSE */
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: var(--main-color);
+  background: none;
+}
+.closeButton:hover {
+  color: var(--main-color-light)
+}

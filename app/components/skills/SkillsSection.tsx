@@ -6,7 +6,7 @@ export default function SkillsSection() {
 
   return (
     <section id="skills">
-      <h2 className={styles.title}>Skills & Technologies</h2>
+      <h2>Skills & Technologies</h2>
 
       <div className={styles.grid}>
         {skillsData.map((category) => (

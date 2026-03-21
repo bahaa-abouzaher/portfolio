@@ -6,9 +6,7 @@ export default function ExperienceSection() {
   return (
     <section id="experience">
 
-      <h2 className={styles.title}>
-        Professional Experience
-      </h2>
+      <h2>Professional Experience</h2>
 
       <div className={styles.timeline}>
         {experiences.map((exp) => (

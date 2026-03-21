@@ -53,6 +53,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
+      <span className="bg-red-400"></span>
 
 
     </section>

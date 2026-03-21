@@ -1,37 +1,55 @@
-"use client"
+import { FiMail, FiPhone, FiMapPin } from "react-icons/fi"
+import styles from "./contact.module.css"
+import { sendContactEmail } from "@/app/_lib/actions"
+import toast from "react-hot-toast";
+import ContactForm from "./ContactForm";
+
 
 export default function ContactSection() {
 
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   const formData = new FormData(e.target);
-
-  //   await fetch("/api/contact", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       name: formData.get("name"),
-  //       email: formData.get("email"),
-  //       message: formData.get("message")
-  //     })
-  //   });
-  // }
 
   return (
-    <section id="contact" className="py-20 text-center">
-      {/* <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+    <section id="contact" className={styles.contact}>
+        <h2>Let&apos;s work together</h2>
 
-        <input name="name" placeholder="Name" className="w-full p-3 border rounded" />
 
-        <input name="email" placeholder="Email" className="w-full p-3 border rounded" />
+      <div className={styles.wrapper}>
+        {/* LEFT - FORM */}
+        <ContactForm />
 
-        <textarea name="message" placeholder="Message" className="w-full p-3 border rounded" />
+        {/* RIGHT - INFO */}
+        <div className={styles.info}>
+          <div className={styles.infoItem}>
+            <div className={styles.iconBox}>
+              <FiMail />
+            </div>
+            <div>
+              <p className={styles.infoTitle}>Email</p>
+              <p>bahaa.abouzahr@gmail.com</p>
+            </div>
+          </div>
 
-        <button className="px-6 py-3 bg-blue-600 rounded">
-          Send
-        </button>
+          <div className={styles.infoItem}>
+            <div className={styles.iconBox}>
+              <FiPhone />
+            </div>
+            <div>
+              <p className={styles.infoTitle}>Phone</p>
+              <p>+49 17677931353</p>
+            </div>
+          </div>
 
-      </form> */}
+          <div className={styles.infoItem}>
+            <div className={styles.iconBox}>
+              <FiMapPin />
+            </div>
+            <div>
+              <p className={styles.infoTitle}>Location</p>
+              <p>Dortmund, Germany</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-  );
+  )
 }

@@ -25,7 +25,8 @@ export default function Navbar({ theme }:NavbarProps) {
 
       },
       {
-        threshold: 0.6
+        // threshold: 0.4,
+        rootMargin: "-20% 0px -40% 0px"
       }
     )
 
@@ -102,8 +103,6 @@ export default function Navbar({ theme }:NavbarProps) {
         >
           Contact
         </button>
-
-        <span className={styles.activeNav}></span>
 
       </nav>
 

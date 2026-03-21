@@ -1,7 +1,7 @@
 import { IconType } from "react-icons"
 
 import { FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs } from "react-icons/fa"
-import { SiTailwindcss, SiJavascript, SiReact, SiNextdotjs, SiSupabase, SiPostgresql } from "react-icons/si"
+import { SiTailwindcss, SiJavascript, SiReact, SiNextdotjs, SiSupabase, SiPostgresql, SiTypescript } from "react-icons/si"
 import { BiCodeAlt } from "react-icons/bi"
 
 export interface Skill {
@@ -22,6 +22,7 @@ export const skillsData: SkillCategory[] = [
       { name: "CSS3", icon: FaCss3Alt },
       { name: "Tailwind", icon: SiTailwindcss },
       { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript  },
       { name: "React", icon: SiReact },
       { name: "Next.js", icon: SiNextdotjs }
     ]
