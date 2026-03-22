@@ -1,4 +1,4 @@
-import { Project } from "@/app/data/projectsData"
+import { Project } from "@/app/types/project"
 import { FaGithub } from "react-icons/fa"
 import { FiCalendar } from "react-icons/fi"
 import styles from "./projects.module.css"
