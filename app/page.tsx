@@ -7,7 +7,7 @@ import Experience from "@/app/components/experience/ExperienceSection";
 import Projects from "@/app/components/projects/ProjectsSection";
 import Certifications from "@/app/components/certifications/CertificationsSection";
 import Contact from "@/app/components/contact/ContactSection";
-import Footer from "@/app/components/Footer";
+import Footer from "@/app/components/footer/Footer";
 
 
 export default async function Home() {

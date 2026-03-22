@@ -1,0 +1,20 @@
+.footer {
+  width: 100%;
+  padding: 2rem 12%;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid var(--main-color-light);
+  background: var(--bg-color);
+}
+
+/* text */
+
+.footer p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  opacity: 0.75;
+}
