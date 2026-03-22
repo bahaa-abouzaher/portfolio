@@ -7,14 +7,14 @@
   justify-content: center;
   align-items: center;
 
-  border-top: 1px solid var(--main-color-light);
+  border-top: 1px solid var(--main-color);
   background: var(--bg-color);
 }
 
 /* text */
 
 .footer p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--text-color);
   opacity: 0.75;
 }

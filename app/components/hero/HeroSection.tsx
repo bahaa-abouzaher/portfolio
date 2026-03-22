@@ -6,14 +6,19 @@ export default function HeroSection() {
   return (
     <section className={styles.home} id="hero">
       <div className={styles.homeContent}>
-        <h1>Hi, I&apos;m <span>Bahaa Abou Zaher</span></h1>
         <div className={styles.textAnimate}>
             <h3>Fullstack Developer</h3>
         </div>
-        <p>Professional IT Support Engineer with 10 years of practical experience
-            in the IT field. Possessing a proven ability to administer the operation,
-            configuration and maintenance of computer-based information systems
-        </p>
+        <div>
+          <p>
+            IT professional with 10 years of experience in IT support, system administration,
+            and infrastructure management. Skilled in managing Windows servers, Active Directory, and leading IT operations. 
+          </p>
+          <p>
+            Currently building full-stack web applications with Next.js, React, and JavaScript, 
+            applying my IT background to create practical and reliable solutions.
+          </p>
+        </div>
 
         <div className={styles.btnBox} >
             <a href="/files/Bahaa Abou Zaher - CV - English.pdf" className={styles.btnCv} download>
