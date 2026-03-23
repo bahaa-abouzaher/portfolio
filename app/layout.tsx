@@ -14,6 +14,9 @@ export default async function RootLayout({children,}: Readonly<{
   children: React.ReactNode;
 }>) {
   const theme = (await cookies()).get("theme")?.value || "dark";
+  const cookieLang = (await cookies()).get("lang")?.value
+
+  const initialLang: "en" | "de" = cookieLang === "de" ? "de" : "en"
 
   return (
     <html lang="en" data-theme={theme}>
@@ -21,7 +24,7 @@ export default async function RootLayout({children,}: Readonly<{
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
       </head>
       <body>
-        <LanguageProvider>
+        <LanguageProvider initialLang={initialLang}>
           {children}
 
           <Toaster 

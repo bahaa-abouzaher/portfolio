@@ -18,7 +18,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects">
-      <h2>Featured Projects</h2>
+      <h2>{t.projects.title}</h2>
       <div className={styles.grid}>
         {projectsData.map((project) => (
           <ProjectCard

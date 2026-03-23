@@ -12,6 +12,7 @@ import Footer from "@/app/components/footer/Footer";
 
 export default async function Home() {
   const theme:string = (await cookies()).get("theme")?.value || "dark";  
+  const initialLang:string = (await cookies()).get("lang")?.value || "en";  
 
   return (
     <main>

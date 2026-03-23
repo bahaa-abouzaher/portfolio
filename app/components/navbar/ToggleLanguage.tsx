@@ -11,13 +11,7 @@ export default function ToggleLanguage() {
       >
         {lang === "en" ? "EN" : "DE"}
       </button>
-      // {/* <span>/</span>
-      // <button
-      //   onClick={() => setLang("de")}
-      //   style={{ fontWeight: lang === "de" ? "bold" : "normal" }}
-      // >
-      //   DE
-      // </button> */}
+
 
   )
 }

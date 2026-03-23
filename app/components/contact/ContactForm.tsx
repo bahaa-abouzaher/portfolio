@@ -26,7 +26,7 @@ export default function ContactForm() {
 
     <form className={styles.form} action={clientAction}>
       <div className={styles.field}>
-        <label>{t.contact.form.name}</label>
+        {/* <label>{t.contact.form.name}</label> */}
         <input 
           type="text" 
           placeholder={t.contact.form.namePlaceholder}
@@ -36,7 +36,7 @@ export default function ContactForm() {
       </div>
 
       <div className={styles.field}>
-        <label>{t.contact.form.email}</label>
+        {/* <label>{t.contact.form.email}</label> */}
         <input 
           type="email" 
           placeholder={t.contact.form.emailPlaceholder}
@@ -46,7 +46,7 @@ export default function ContactForm() {
       </div>
 
       <div className={styles.field}>
-        <label>{t.contact.form.message}</label>
+        {/* <label>{t.contact.form.message}</label> */}
         <textarea 
           rows={6} 
           placeholder={t.contact.form.messagePlaceholder}

@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useState } from "react"
 
 type Lang = "en" | "de"
 
@@ -11,16 +11,16 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | null>(null)
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en")
+type LanguageProviderProps = {
+  children: React.ReactNode
+  initialLang: Lang
+}
 
-  useEffect(() => {
-    const saved = localStorage.getItem("lang") as Lang | null
-    if (saved) setLangState(saved)
-  }, [])
+export function LanguageProvider({ children, initialLang }: LanguageProviderProps) {
+  const [lang, setLangState] = useState<Lang>(initialLang)
 
   function setLang(newLang: Lang){
-    localStorage.setItem("lang", newLang)
+    document.cookie = `lang=${newLang}; path=/; max-age=31536000`
     setLangState(newLang)
   }
 
