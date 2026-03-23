@@ -1,33 +1,34 @@
+"use client" 
+
 import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styles from "./hero.module.css"
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/i18n/translations"
 
 export default function HeroSection() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+
   return (
     <section className={styles.home} id="hero">
       <div className={styles.homeContent}>
         <div className={styles.textAnimate}>
-            <h3>Fullstack Developer</h3>
+            <h3>{t.hero.title}</h3>
         </div>
         <div>
-          <p>
-            IT professional with 10 years of experience in IT support, system administration,
-            and infrastructure management. Skilled in managing Windows servers, Active Directory, and leading IT operations. 
-          </p>
-          <p>
-            Currently building full-stack web applications with Next.js, React, and JavaScript, 
-            applying my IT background to create practical and reliable solutions.
-          </p>
+          <p>{t.hero.p1}</p>
+          <p>{t.hero.p2}</p>
         </div>
 
         <div className={styles.btnBox} >
             <a href="/files/Bahaa Abou Zaher - CV - English.pdf" className={styles.btnCv} download>
-              <span>Download CV</span>
-              <span>English</span>
+              <span>{t.hero.downloadCv}</span>
+              <span>{t.hero.english}</span>
             </a>
             <a href="/files/Bahaa Abou Zaher - CV - Deutsch.pdf" className={styles.btnCv} download>
-              <span>Download CV</span>
-              <span>Deutsch</span>
+              <span>{t.hero.downloadCv}</span>
+              <span>{t.hero.german}</span>
             </a>
         </div>
       

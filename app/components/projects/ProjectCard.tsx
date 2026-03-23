@@ -5,12 +5,18 @@ import styles from "./projects.module.css"
 import { BsThreeDots } from "react-icons/bs"
 import { useState } from "react"
 
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/i18n/translations"
+
 type ProjectCardProps = {
   project: Project
   onOpen: () => void
 }
 
 export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+  
   const [displayAllTech, setDisplayAllTech] = useState(false);
 
   const visibleTech = displayAllTech ? project.tech : project.tech.slice(0, 6);
@@ -23,7 +29,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
           <span className={styles.statusDot}></span>
           <span>Active Project</span>
         </div>
-        <h3 className={styles.cardTitle}>{project.subtitle}</h3>
+        <h3 className={styles.cardTitle}>{project.subtitle[lang]}</h3>
         <button className={styles.cardDots} onClick={onOpen}>
           <BsThreeDots />
         </button>
@@ -37,11 +43,11 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
 
           <div>
             <h3 className={styles.cardTitle}>{project.title}</h3>
-            <p className={styles.cardSubtitle}>{project.type}</p>
+            <p className={styles.cardSubtitle}>{project.type[lang]}</p>
           </div>
         </div>
 
-        <p className={styles.cardDescription}>{project.description}</p>
+        <p className={styles.cardDescription}>{project.description[lang]}</p>
 
         <div className={styles.cardMeta}>
           <FiCalendar />
@@ -64,7 +70,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
 
         <div className={styles.cardFooter}>
           <button type="button" className={styles.detailsButton} onClick={onOpen}>
-            View Details →
+            {t.projects.details} →
           </button>
         </div>
       </div>

@@ -4,13 +4,18 @@ import { FiCalendar } from "react-icons/fi"
 import styles from "./projects.module.css"
 import { IoIosCloseCircleOutline } from "react-icons/io"
 
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/i18n/translations"
+
 type ProjectModalProps = {
   project: Project
   onClose: () => void
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
-
+  const { lang } = useLanguage();
+  const t = translations[lang];
+  
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div
@@ -28,14 +33,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         <div className={styles.modalHeader}>
           <h3 className={styles.modalTitle}>{project.title}</h3>
-          <p className={styles.modalIntro}>{project.description}</p>
+          <p className={styles.modalIntro}>{project.description[lang]}</p>
         </div>
 
         <div className={styles.modalBody}>
           <div className={styles.modalMeta}>
             <FiCalendar className={styles.metaIcon} />
             <div>
-              <p className={styles.metaLabel}>Duration</p>
+              <p className={styles.metaLabel}>{t.projects.duration}</p>
               <p className={styles.metaValue}>{project.duration}</p>
             </div>
           </div>
@@ -43,19 +48,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className={styles.modalBlock}>
             <div className={styles.blockHeading}>
               <span className={styles.blockBar}></span>
-              <h4>Project Description</h4>
+              <h4>{t.projects.description}</h4>
             </div>
-            <p className={styles.blockText}>{project.longDescription}</p>
+            <p className={styles.blockText}>{project.longDescription[lang]}</p>
           </div>
 
           <div className={styles.modalBlock}>
             <div className={styles.blockHeading}>
               {/* <span className={styles.blockBar}></span> */}
-              <h4>Key Features</h4>
+              <h4>{t.projects.features}</h4>
             </div>
 
             <ul className={styles.featuresList}>
-              {project.features.map((feature) => (
+              {project.features[lang].map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
@@ -64,7 +69,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className={styles.modalBlock}>
             <div className={styles.blockHeading}>
               <span className={styles.blockBar}></span>
-              <h4>Technology Stack</h4>
+              <h4>{t.projects.tech}</h4>
             </div>
 
             <div className={styles.techList}>
@@ -84,7 +89,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               className={styles.repoButton}
             >
               <FaGithub />
-              <span>View Repository</span>
+              <span>{t.projects.repo}</span>
             </a>
           )}
         </div>

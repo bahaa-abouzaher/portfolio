@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react"
 import ToggleTheme from "./ToggleTheme"
 import styles from "./navbar.module.css"
+import ToggleLanguage from "./ToggleLanguage"
+import { useLanguage } from "@/app/context/LanguageContext"
+import { translations } from "@/app/i18n/translations"
 
 
 type NavbarProps = {
@@ -10,6 +13,9 @@ type NavbarProps = {
 }
 
 export default function Navbar({ theme }:NavbarProps) {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
@@ -53,8 +59,6 @@ export default function Navbar({ theme }:NavbarProps) {
     }
   }
 
-  
-
   return (
     <header className={`${styles.header}`}>
       <a href="#" className={styles.logo}>
@@ -66,47 +70,50 @@ export default function Navbar({ theme }:NavbarProps) {
           onClick={() => handleClick("hero")}
           className={activeSection === "hero" ? styles.active : ""}
         >
-          Home
+          {t.navbar.home}
         </button>
 
         <button
           onClick={() => handleClick("skills")}
           className={activeSection === "skills" ? styles.active : ""}
         >
-          Skills
+          {t.navbar.skills}
         </button>
 
         <button
           onClick={() => handleClick("experience")}
           className={activeSection === "experience" ? styles.active : ""}
         >
-          Experience
+          {t.navbar.experience}
         </button>
 
         <button
           onClick={() => handleClick("projects")}
           className={activeSection === "projects" ? styles.active : ""}
         >
-          Projects
+          {t.navbar.projects}
         </button>
 
         <button
           onClick={() => handleClick("certifications")}
           className={activeSection === "certifications" ? styles.active : ""}
         >
-          Certifications
+          {t.navbar.certifications}
         </button>
 
         <button
           onClick={() => handleClick("contact")}
           className={activeSection === "contact" ? styles.active : ""}
         >
-          Contact
+          {t.navbar.contact}
         </button>
 
       </nav>
 
+      <div className={styles.togglesContainer}>
+        <ToggleLanguage />
         <ToggleTheme initialTheme={theme} />
+      </div>
 
     </header>
   )

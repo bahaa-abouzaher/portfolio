@@ -5,5 +5,5 @@ export interface Experience {
   startDate: string
   endDate: string
   type: "Full-time" | "Part-time" | "Internship" | "Contract"
-  description: string[]
+  description: { en: string[]; de: string[] }
 }

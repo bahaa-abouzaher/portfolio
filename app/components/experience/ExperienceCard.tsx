@@ -6,11 +6,17 @@ import { FaLocationDot } from "react-icons/fa6"
 import { FaRegCalendarAlt } from "react-icons/fa"
 import { FaRegClock } from "react-icons/fa"
 
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/i18n/translations"
+
+
 interface Props {
   experience: Experience
 }
 
 export default function ExperienceCard({ experience }: Props) {
+  const { lang } = useLanguage();
+  const t = translations[lang];
 
   const duration = calcDuration(
     experience.startDate,
@@ -27,7 +33,7 @@ export default function ExperienceCard({ experience }: Props) {
         styles[experience.type.toLowerCase().replace("-", "")]
       }`}
     >
-      {experience.type}
+      {t.experience.types[experience.type as keyof typeof t.experience.types ]}
     </span>
 
     <h3 className={styles.role}>
@@ -46,7 +52,7 @@ export default function ExperienceCard({ experience }: Props) {
 
       <span className={styles.metaItem}>
         <FaRegCalendarAlt className={styles.icon}/>
-        {experience.startDate} - {experience.endDate}
+        {experience.startDate} - {experience.endDate === "Present" ? t.experience.present : experience.endDate}
       </span>
 
       <span className={styles.metaItem}>
@@ -58,9 +64,9 @@ export default function ExperienceCard({ experience }: Props) {
   </div>
   
   <div className={styles.listContainer}>
-    <h4 className={styles.respTitle}>Key Responsibilities</h4>
+    <h4 className={styles.respTitle}>{t.experience.responsibilities}</h4>
     <ul className={styles.list}>
-      {experience.description.map((item) => (
+      {experience.description[lang].map((item: string) => (
         <li key={item}>{item}</li>
       ))}
     </ul>

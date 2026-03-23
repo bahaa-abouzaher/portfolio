@@ -1,27 +1,41 @@
 import { FiCalendar } from "react-icons/fi"
 import styles from "./certifications.module.css"
 
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/i18n/translations"
+
+type LocalizedString = {
+  en: string
+  de: string
+}
+
 type BaseCardItem = {
   id: number
   date: string
-  title: string
+  title: string | LocalizedString
   description?: string
 }
+
 
 type EducationCardItem = BaseCardItem & {
   institution: string
 }
 
 type CertificationCardItemData = BaseCardItem & {
-  issuer: string
+  issuer?: LocalizedString
 }
+
 
 type CertificationCardProps = {
   item: EducationCardItem | CertificationCardItemData
 }
 
+
 export default function CertificationCard({ item }: CertificationCardProps) {
-  const subText = "institution" in item ? item.institution : item.issuer
+  const { lang } = useLanguage();
+  const t = translations[lang];
+
+  const subText =  "institution" in item ? item.institution : item.issuer?.[lang] || ""
 
   return (
     <div className={styles.item}>
@@ -31,8 +45,13 @@ export default function CertificationCard({ item }: CertificationCardProps) {
           <span>{item.date}</span>
         </div>
 
-        <h3>{item.title}</h3>
-        <p>{subText}</p>
+        <h3>{typeof item.title === "object"
+          ? item.title[lang]
+          : item.title}
+        </h3>
+        <p>
+          {subText}
+        </p>
         {item.description && <p>{item.description}</p>}
       </div>
     </div>

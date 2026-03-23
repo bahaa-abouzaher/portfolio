@@ -7,7 +7,13 @@ import ProjectCard from "./ProjectCard"
 import ProjectModal from "./ProjectModal"
 import styles from "./projects.module.css"
 
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/i18n/translations"
+
 export default function ProjectsSection() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+  
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (

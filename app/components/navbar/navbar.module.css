@@ -46,6 +46,11 @@
 }
 
 
+.togglesContainer {
+  display: flex;
+  gap: 1.5rem;
+}
+
 @media (max-width: 600px) {
   .header {
     padding: 2rem 3% 2rem;
@@ -68,3 +73,4 @@
     display: none;
   }
  }
+

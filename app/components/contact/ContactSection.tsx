@@ -1,16 +1,19 @@
-import { FiMail, FiPhone, FiMapPin } from "react-icons/fi"
-import styles from "./contact.module.css"
-import { sendContactEmail } from "@/app/_lib/actions"
-import toast from "react-hot-toast";
+"use client"
+
+import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import styles from "./contact.module.css";
 import ContactForm from "./ContactForm";
 
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/i18n/translations"
 
 export default function ContactSection() {
-
+  const { lang } = useLanguage();
+  const t = translations[lang];
 
   return (
     <section id="contact" className={styles.contact}>
-        <h2>Let&apos;s work together</h2>
+        <h2>{t.contact.title}</h2>
 
 
       <div className={styles.wrapper}>
@@ -24,7 +27,7 @@ export default function ContactSection() {
               <FiMail />
             </div>
             <div>
-              <p className={styles.infoTitle}>Email</p>
+              <p className={styles.infoTitle}>{t.contact.info.email}</p>
               <p>bahaa.abouzahr@gmail.com</p>
             </div>
           </div>
@@ -34,7 +37,7 @@ export default function ContactSection() {
               <FiPhone />
             </div>
             <div>
-              <p className={styles.infoTitle}>Phone</p>
+              <p className={styles.infoTitle}>{t.contact.info.phone}</p>
               <p>+49 17677931353</p>
             </div>
           </div>
@@ -44,7 +47,7 @@ export default function ContactSection() {
               <FiMapPin />
             </div>
             <div>
-              <p className={styles.infoTitle}>Location</p>
+              <p className={styles.infoTitle}>{t.contact.info.location}</p>
               <p>Dortmund, Germany</p>
             </div>
           </div>
