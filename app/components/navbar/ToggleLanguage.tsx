@@ -7,7 +7,7 @@ export default function ToggleLanguage() {
   return (
       <button
         onClick={() => setLang(lang === "en" ? "de" : "en")}
-        style={{ fontWeight: lang === "en" ? "bold" : "normal" }}
+        style={{ fontWeight:  "bold" }}
       >
         {lang === "en" ? "EN" : "DE"}
       </button>
