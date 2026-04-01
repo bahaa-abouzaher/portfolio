@@ -79,7 +79,7 @@ export const projectsData: Project[] = [
 
   duration: "2025",
 
-  tech: ["React", "CSS"],
+  tech: ["React", "Tailwind", "CSS"],
 
   features: {
     en: [
