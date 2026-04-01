@@ -36,7 +36,8 @@ export const projectsData: Project[] = [
         "Persistent cart with quantity controls and save-for-later wishlist flow",
         "Supabase authentication with email/password and Google provider login",
         "Account area with profile management, wishlist, and order history",
-        "Admin Page to upload new products and delete existing products"
+        "Admin Page to upload new products and delete existing products",
+        "Dark/Light theme toggle with persistent preference"
       ],
       de: [
         "Produktsuche mit Kategorienavigation, Suche, Filterung, Sortierung und Pagination",
@@ -44,10 +45,57 @@ export const projectsData: Project[] = [
         "Persistenter Warenkorb mit Mengensteuerung und Wunschlistenfunktion",
         "Authentifizierung mit Supabase (E-Mail/Passwort und Google Login)",
         "Benutzerbereich mit Profilverwaltung, Wunschliste und Bestellverlauf",
-        "Admin-Seite zum Hinzufügen und Löschen von Produkten"
+        "Admin-Seite zum Hinzufügen und Löschen von Produkten",
+        "Dark-/Light-Theme mit persistenter Einstellung"
       ]
     },
 
     github: "https://github.com/bahaa-abouzaher/dressify"
-  }
+  },
+
+{
+  id: 2,
+  title: "Shopping List",
+
+  subtitle: {
+    en: "Daily Shopping List App",
+    de: "Einkaufsliste App"
+  },
+
+  type: {
+    en: "Frontend App",
+    de: "Frontend Anwendung"
+  },
+
+  description: {
+    en: "Simple shopping list app for daily use with item tracking and filtering.",
+    de: "Einfache Einkaufsliste für den Alltag mit Artikelverwaltung und Filterfunktionen."
+  },
+
+  longDescription: {
+    en: "Built a lightweight shopping list application for daily usage, allowing users to quickly add items, track their purchase status, reorder entries, and manage the list efficiently with filtering and clearing functionality.",
+    de: "Entwicklung einer leichten Einkaufslisten-Anwendung für den täglichen Gebrauch, mit Funktionen zum schnellen Hinzufügen von Artikeln, Verfolgen des Kaufstatus, Neuordnen von Einträgen sowie Filtern und Leeren der Liste."
+  },
+
+  duration: "2025",
+
+  tech: ["React", "CSS"],
+
+  features: {
+    en: [
+      "Add and remove items quickly for daily shopping needs",
+      "Filter items by All, Bought, and Pending",
+      "Reorder items in the list",
+      "Clear the entire list functionality"
+    ],
+    de: [
+      "Schnelles Hinzufügen und Entfernen von Artikeln für den Alltag",
+      "Filterung nach Alle, Gekauft und Ausstehend",
+      "Neuordnung der Liste",
+      "Funktion zum Leeren der gesamten Liste"
+    ]
+  },
+
+  github: "https://bahaa-abouzaher.github.io/shopping-list/"
+}
 ]
