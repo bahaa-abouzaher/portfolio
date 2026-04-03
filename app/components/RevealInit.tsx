@@ -12,7 +12,7 @@ export default function RevealInit() {
           entry.target.classList.add("show");
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
 
     elements.forEach((el) => observer.observe(el));
   }, []);
