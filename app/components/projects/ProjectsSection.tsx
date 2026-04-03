@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { projectsData } from "@/app/data/projectsData"
 import { Project } from "@/app/types/project"
 import ProjectCard from "./ProjectCard"
@@ -15,6 +15,14 @@ export default function ProjectsSection() {
   const t = translations[lang];
   
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
+  useEffect(() => {
+    document.body.style.overflow = selectedProject ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedProject]);
 
   return (
     <section id="projects">
