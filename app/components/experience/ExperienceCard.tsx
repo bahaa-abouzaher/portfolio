@@ -24,7 +24,7 @@ export default function ExperienceCard({ experience }: Props) {
   )
 
   return (
-<div className={styles.card}>
+<div className={`${styles.card} reveal`}>
 
   <div className={styles.jobInfo}>
 

@@ -11,7 +11,7 @@ export default function SkillsSection() {
   const t = translations[lang];
 
   return (
-    <section id="skills">
+    <section id="skills" className="reveal">
       <h2>{t.skills.title}</h2>
 
       <div className={styles.grid}>

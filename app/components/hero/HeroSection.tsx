@@ -11,7 +11,7 @@ export default function HeroSection() {
   const t = translations[lang];
 
   return (
-    <section className={styles.home} id="hero">
+    <section className={`${styles.home} reveal`} id="hero">
       <div className={styles.homeContent}>
         <div className={styles.textAnimate}>
             <h3>{t.hero.title}</h3>

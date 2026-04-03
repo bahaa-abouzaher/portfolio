@@ -25,9 +25,9 @@ export default function ProjectsSection() {
   }, [selectedProject]);
 
   return (
-    <section id="projects">
+    <section id="projects" className="reveal">
       <h2>{t.projects.title}</h2>
-      <div className={styles.grid}>
+      <div className={`${styles.grid} reveal`}>
         {projectsData.map((project) => (
           <ProjectCard
             key={project.id}

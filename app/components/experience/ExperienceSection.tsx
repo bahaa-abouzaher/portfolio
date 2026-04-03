@@ -11,7 +11,7 @@ export default function ExperienceSection() {
   const t = translations[lang];
 
   return (
-    <section id="experience">
+    <section id="experience" className="reveal">
 
       <h2>{t.experience.title}</h2>
 

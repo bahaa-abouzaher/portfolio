@@ -38,7 +38,7 @@ export default function CertificationCard({ item }: CertificationCardProps) {
   const subText =  "institution" in item ? item.institution : item.issuer?.[lang] || ""
 
   return (
-    <div className={styles.item}>
+    <div className={`${styles.item} reveal`}>
       <div className={styles.itemInner}>
         <div className={styles.year}>
           <FiCalendar />

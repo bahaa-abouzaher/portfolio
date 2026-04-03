@@ -2,7 +2,7 @@ import styles from "./footer.module.css"
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} reveal`}>
       <p>
         © {new Date().getFullYear()} - Bahaa Abou Zaher
       </p>

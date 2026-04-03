@@ -56,8 +56,18 @@ body {
   overflow: hidden;
 }
 
-/* generic section layout */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
 
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* generic section layout */
 section {
   padding: 5rem 13%;
 

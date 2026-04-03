@@ -12,7 +12,7 @@ export default function CertificationsSection() {
   const t = translations[lang];
 
   return (
-    <section id="certifications">
+    <section id="certifications" className="reveal">
       <h2 className={styles.heading}>
         {t.certifications.title}
       </h2>

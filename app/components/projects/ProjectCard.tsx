@@ -24,7 +24,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
 
   return (
     <article className={styles.card}>
-      <div className={styles.cardTop}>
+      <div className={`${styles.cardTop} reveal`}>
         <div className={styles.cardStatus}>
           <span className={styles.statusDot}></span>
           <span>Active Project</span>
@@ -35,7 +35,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
         </button>
       </div>
 
-      <div className={styles.cardBody}>
+      <div className={`${styles.cardBody} reveal`}>
         <div className={styles.cardHeader}>
           <div className={styles.cardIconBox}>
             <FaGithub className={styles.cardIcon} />

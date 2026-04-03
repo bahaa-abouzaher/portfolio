@@ -24,7 +24,7 @@ export default function ContactForm() {
 
   return (
 
-    <form className={styles.form} action={clientAction}>
+    <form className={`${styles.form} reveal`} action={clientAction}>
       <div className={styles.field}>
         {/* <label>{t.contact.form.name}</label> */}
         <input 

@@ -12,7 +12,7 @@ export default function ContactSection() {
   const t = translations[lang];
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" className={`${styles.contact} reveal`}>
         <h2>{t.contact.title}</h2>
 
 
@@ -21,7 +21,7 @@ export default function ContactSection() {
         <ContactForm />
 
         {/* RIGHT - INFO */}
-        <div className={styles.info}>
+        <div className={`${styles.info} reveal`}>
           <div className={styles.infoItem}>
             <div className={styles.iconBox}>
               <FiMail />

@@ -134,13 +134,24 @@
 .overlay {
   position: fixed;
   inset: 0;
+  z-index: 9999;
+
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
   padding: 2rem;
-  z-index: 9999;
+  overflow-y: auto;
+
+  opacity: 0;
+  animation: overlayFade 0.25s ease forwards;
 }
 
+@keyframes overlayFade {
+  to {
+    opacity: 1;
+  }
+}
 /* dim background ONLY */
 
 .overlay::before {
@@ -154,17 +165,29 @@
 /* MODAL */
 
 .modal {
-  position: relative; /* 🔥 fixes X button */
+  position: relative; 
   width: 750px;
   max-width: 90%;
-  max-height: 85vh;
+
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
   overflow: hidden;
   z-index: 1;
+  
+  margin: auto 0;
+
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: modalIn 0.3s ease forwards;
 }
 
+@keyframes modalIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 /* HEADER */
 
 .modalHeader {

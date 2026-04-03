@@ -13,7 +13,7 @@ export default function SkillCategory({ skills, title }: SkillCategoryProps) {
   const t = translations[lang];
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} reveal`}>
       <h3 className={styles.categoryTitle}>
         {t.skills.categories[title as keyof typeof t.skills.categories]}
       </h3>
@@ -23,7 +23,7 @@ export default function SkillCategory({ skills, title }: SkillCategoryProps) {
           const Icon = skill.icon
 
           return (
-            <li key={skill.name} className={styles.skillItem}>
+            <li key={skill.name} className={`${styles.skillItem} reveal`}>
               <Icon className={styles.icon} />
               <span>{skill.name}</span>
             </li>

@@ -8,6 +8,7 @@ import Projects from "@/app/components/projects/ProjectsSection";
 import Certifications from "@/app/components/certifications/CertificationsSection";
 import Contact from "@/app/components/contact/ContactSection";
 import Footer from "@/app/components/footer/Footer";
+import RevealInit from "./components/RevealInit";
 
 
 export default async function Home() {
@@ -16,6 +17,8 @@ export default async function Home() {
 
   return (
     <main>
+      <RevealInit />
+
       <Navbar theme={theme} />
       <Hero />
       <Skills />
