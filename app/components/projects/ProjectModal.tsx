@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa"
 import { FiCalendar } from "react-icons/fi"
 import styles from "./projects.module.css"
 import { IoIosCloseCircleOutline } from "react-icons/io"
+import { createPortal } from "react-dom"
 
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/i18n/translations"
@@ -16,7 +17,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const { lang } = useLanguage();
   const t = translations[lang];
   
-  return (
+  return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div
         className={styles.modal}
@@ -55,10 +56,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <div className={styles.modalBlock}>
             <div className={styles.blockHeading}>
-              {/* <span className={styles.blockBar}></span> */}
               <h4>{t.projects.features}</h4>
             </div>
-
             <ul className={styles.featuresList}>
               {project.features[lang].map((feature) => (
                 <li key={feature}>{feature}</li>
@@ -71,7 +70,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <span className={styles.blockBar}></span>
               <h4>{t.projects.tech}</h4>
             </div>
-
             <div className={styles.techList}>
               {project.tech.map((item) => (
                 <span key={item} className={styles.techBadge}>
@@ -94,6 +92,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
