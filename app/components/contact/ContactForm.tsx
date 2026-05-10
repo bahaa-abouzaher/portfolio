@@ -29,6 +29,7 @@ export default function ContactForm() {
         {/* <label>{t.contact.form.name}</label> */}
         <input 
           type="text" 
+          aria-label={t.contact.form.name}
           placeholder={t.contact.form.namePlaceholder}
           name="name" 
           required
@@ -39,6 +40,7 @@ export default function ContactForm() {
         {/* <label>{t.contact.form.email}</label> */}
         <input 
           type="email" 
+          aria-label={t.contact.form.email}
           placeholder={t.contact.form.emailPlaceholder}
           name="email" 
           required
@@ -49,6 +51,7 @@ export default function ContactForm() {
         {/* <label>{t.contact.form.message}</label> */}
         <textarea 
           rows={6} 
+          aria-label={t.contact.form.message}
           placeholder={t.contact.form.messagePlaceholder}
           name="message"
           required

@@ -37,7 +37,9 @@ export const projectsData: Project[] = [
         "Supabase authentication with email/password and Google provider login",
         "Account area with profile management, wishlist, and order history",
         "Admin Page to upload new products and delete existing products",
-        "Dark/Light theme toggle with persistent preference"
+        "Dark/Light theme toggle with persistent preference",
+        "End-to-end testing with Playwright covering search, cart, authentication, and checkout flows",
+        "CI/CD pipeline with GitHub Actions running automated tests before deployment"
       ],
       de: [
         "Produktsuche mit Kategorienavigation, Suche, Filterung, Sortierung und Pagination",
@@ -46,7 +48,9 @@ export const projectsData: Project[] = [
         "Authentifizierung mit Supabase (E-Mail/Passwort und Google Login)",
         "Benutzerbereich mit Profilverwaltung, Wunschliste und Bestellverlauf",
         "Admin-Seite zum Hinzufügen und Löschen von Produkten",
-        "Dark-/Light-Theme mit persistenter Einstellung"
+        "Dark-/Light-Theme mit persistenter Einstellung",
+        "End-to-End-Tests mit Playwright für Suche, Warenkorb, Authentifizierung und Checkout",
+        "CI/CD-Pipeline mit GitHub Actions zur automatisierten Testausführung vor Deployments"
       ]
     },
 

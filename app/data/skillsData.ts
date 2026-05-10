@@ -1,6 +1,6 @@
 import { IconType } from "react-icons"
 
-import { FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs } from "react-icons/fa"
+import { FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs, FaVial, FaCogs } from "react-icons/fa"
 import { SiTailwindcss, SiJavascript, SiReact, SiNextdotjs, SiSupabase, SiPostgresql, SiTypescript } from "react-icons/si"
 import { BiCodeAlt } from "react-icons/bi"
 
@@ -46,10 +46,18 @@ export const skillsData: SkillCategory[] = [
   },
 
   {
+    title: "Testing",
+    skills: [
+      { name: "Playwright (E2E Testing)", icon: FaVial },
+    ]
+  },
+
+  {
     title: "Tools",
     skills: [
       { name: "Git", icon: FaGitAlt },
       { name: "GitHub", icon: FaGithub },
+      { name: "CI/CD (GitHub Actions)", icon: FaCogs },
     ]
   }
 ]

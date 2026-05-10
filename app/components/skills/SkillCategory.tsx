@@ -15,7 +15,7 @@ export default function SkillCategory({ skills, title }: SkillCategoryProps) {
   return (
     <div className={`${styles.card} reveal`}>
       <h3 className={styles.categoryTitle}>
-        {t.skills.categories[title as keyof typeof t.skills.categories]}
+        {t.skills.categories[title as keyof typeof t.skills.categories] ?? title}
       </h3>
 
       <ul className={styles.skillList}>

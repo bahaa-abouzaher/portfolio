@@ -61,9 +61,9 @@ export default function Navbar({ theme }:NavbarProps) {
 
   return (
     <header className={`${styles.header}`}>
-      <a href="#" className={styles.logo}>
+      <p className={styles.logo}>
         <span>Bahaa</span> Abou Zaher
-      </a>
+      </p>
       
       <nav className={styles.navbar}>
         <button

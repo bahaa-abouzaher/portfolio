@@ -24,6 +24,7 @@ export const translations = {
         "Frontend Development": "Frontend Development",
         "Backend & APIs": "Backend & APIs",
         "Database": "Database",
+        "Testing": "Testing",
         "Tools": "Tools"
       }
     },

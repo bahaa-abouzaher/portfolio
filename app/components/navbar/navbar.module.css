@@ -41,7 +41,13 @@
   color: var(--main-color);
 }
 
+.langToggle {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .themeToggle {
+  cursor: pointer;
   font-size: 20px;
 }
 
