@@ -42,7 +42,13 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
           </div>
 
           <div>
-            <h3 className={styles.cardTitle}>{project.title}</h3>
+            <h3 className={styles.cardTitle}>
+              {project.liveUrl ? (
+                <a className={styles.projectTitleLink} href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  {project.title}
+                </a>
+              ) : project.title}
+            </h3>
             <p className={styles.cardSubtitle}>{project.type[lang]}</p>
           </div>
         </div>
@@ -69,6 +75,11 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
         </div>
 
         <div className={styles.cardFooter}>
+          {project.liveUrl && (
+            <a className={styles.detailsButton} href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              {t.projects.live}
+            </a>
+          )}
           <button type="button" className={styles.detailsButton} onClick={onOpen}>
             {t.projects.details} →
           </button>

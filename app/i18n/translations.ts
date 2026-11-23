@@ -50,6 +50,7 @@ export const translations = {
       features: "Key Features",
       tech: "Technology Stack",
       repo: "View Repository",
+      live: "Open app",
       details: "View Details",
       active: "Active Project"
     },
@@ -134,6 +135,7 @@ export const translations = {
       features: "Hauptfunktionen",
       tech: "Technologien",
       repo: "Repository ansehen",
+      live: "App öffnen",
       details: "Details anzeigen",
       active: "Aktives Projekt"
     },

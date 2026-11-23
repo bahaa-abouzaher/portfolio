@@ -23,5 +23,6 @@ export interface Project {
   }
   tech: string[]
   duration: string
+  liveUrl?: string
   github?: string
 }

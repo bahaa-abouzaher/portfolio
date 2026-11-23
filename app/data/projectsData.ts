@@ -54,6 +54,7 @@ export const projectsData: Project[] = [
       ]
     },
 
+    liveUrl: "https://dressify.bahaa.app",
     github: "https://github.com/bahaa-abouzaher/dressify"
   },
 
@@ -100,6 +101,7 @@ export const projectsData: Project[] = [
     ]
   },
 
-  github: "https://bahaa-abouzaher.github.io/shopping-list/"
+  liveUrl: "https://shopping.bahaa.app",
+  github: "https://github.com/bahaa-abouzaher/shopping-list"
 }
 ]

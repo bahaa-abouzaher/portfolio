@@ -116,8 +116,15 @@
   cursor: pointer;
 }
 
+.projectTitleLink {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .cardFooter {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   justify-content: flex-end;
   margin-top: 1.5rem;
 }
@@ -302,8 +309,14 @@
 
 /* BUTTON */
 
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+}
 .repoButton {
-  margin: 0.8rem auto 0;
   padding: 0.65rem 1.3rem;
   border-radius: 999px;
   background: var(--main-color);

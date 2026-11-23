@@ -1,6 +1,6 @@
 import { Project } from "@/app/types/project"
 import { FaGithub } from "react-icons/fa"
-import { FiCalendar } from "react-icons/fi"
+import { FiCalendar, FiExternalLink } from "react-icons/fi"
 import styles from "./projects.module.css"
 import { IoIosCloseCircleOutline } from "react-icons/io"
 import { createPortal } from "react-dom"
@@ -33,7 +33,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </button>
 
         <div className={styles.modalHeader}>
-          <h3 className={styles.modalTitle}>{project.title}</h3>
+          <h3 className={styles.modalTitle}>
+            {project.liveUrl ? (
+              <a className={styles.projectTitleLink} href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                {project.title}
+              </a>
+            ) : project.title}
+          </h3>
           <p className={styles.modalIntro}>{project.description[lang]}</p>
         </div>
 
@@ -79,17 +85,25 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           </div>
 
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.repoButton}
-            >
-              <FaGithub />
-              <span>{t.projects.repo}</span>
-            </a>
-          )}
+          <div className={styles.projectLinks}>
+            {project.liveUrl && (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.repoButton}>
+                <FiExternalLink />
+                <span>{t.projects.live}</span>
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.repoButton}
+              >
+                <FaGithub />
+                <span>{t.projects.repo}</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>,
