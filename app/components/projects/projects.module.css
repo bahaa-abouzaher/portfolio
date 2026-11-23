@@ -117,8 +117,12 @@
 }
 
 .projectTitleLink {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.projectTitleLink:hover {
+  color: var(--main-color-light);
 }
 
 .cardFooter {
